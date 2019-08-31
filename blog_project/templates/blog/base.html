@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load blog_tags %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{%static 'css/blog1.css' %}">
+    <title>{%block title_block%}  {%endblock%}</title>
+</head>
+<body>
+<div class="content">
+    {%block content%}   {%endblock%}
+</div>
+<div class="sidebar">
+     <h2>IncredibleGuys News</h2>
+    <p>Here you can see Incredible Guys Latest Updates....</p>
+    <p>The total Number of Guys Upto Today: <span id="pcount">{% total_posts %}</span></p>
+    <h3>Latest Posts: </h3><span class="lp">{% show_latest_posts %}</span>
+    <h3>Most Commented Posts: </h3>
+    {% get_most_commented_posts as most_commented_posts %}
+    <ul>
+        {% for post in most_commented_posts %}
+        <div class="anclr"><li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li></div>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
