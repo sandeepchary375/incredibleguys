@@ -27,12 +27,17 @@ color: yellow;
 font-size: 12px;
 font-style: italic;
 }
+
 a{
-color: blue;
+color : white;
+text-decoration : none;
+}
+.red {
+color : yellow;
 text-decoration: none;
 }
 
-#ch{
+ #ch{
 color: yellow;
 font-size: 30px;
 font-style: italic;
@@ -45,4 +50,15 @@ border : 1px solid orange;
 font-size: 40px;
 color: yellow;
 font-weight: bold;
+}
+h1{
+color: yellow;
+font-size:50px;
+}
+h3{
+color: yellow;
+}
+h4{
+color: yellow;
+font-size:35px;
 }

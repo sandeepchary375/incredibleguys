@@ -2,13 +2,13 @@
 {% extends 'blog/base.html' %}
 {%block title_block%} Incredible Blog{%endblock%}
      {% block content %}
-           <h1>Incredible Guys</h1>
+           <h1>INCREDIBLE GUYS</h1>
            {% if tag %}
                 <h2>posts tagged with '{{tag.name}}'</h2>
            {% endif %}
 
            {%for post in post_list %}
-                <a href="{{post.get_absolute_url}}"><h2>{{post.title}}</h2></a>
+                <a href="{{post.get_absolute_url}}" class="blue"><h2>{{post.title}}</h2></a>
                 <p id="date">Published on {{post.publish}} by {{post.author|title}}</p>
                 <p>Tags:
                     {% for tag in post.tags.all %}

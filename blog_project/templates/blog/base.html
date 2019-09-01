@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-{% load blog_tags %}
 {% load staticfiles %}
+{% load blog_tags %}
 <html lang="en">
 <head>
-     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+     <link rel="stylesheet" href="{%static 'css/blog1.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{%static 'css/blog1.css' %}">
+
     <title>{%block title_block%}  {%endblock%}</title>
 </head>
 <body>
@@ -15,17 +17,26 @@
     {%block content%}   {%endblock%}
 </div>
 <div class="sidebar">
-     <h2>IncredibleGuys News</h2>
+     <h4>IncredibleGuys News</h4>
     <p>Here you can see Incredible Guys Latest Updates....</p>
+    <hr>
+    <ol>
+        <li>Gopal and Sandeep Reddy Matches Are Going on. Marriage Will be done very soon, Expected to be in the month of jan-apr 2020 </li><br>
+        <li>Macha Rajesh Started a Venture at CCC, if any body interested please contact him.</li>
+    </ol>
     <p>The total Number of Guys Upto Today: <span id="pcount">{% total_posts %}</span></p>
-    <h3>Latest Posts: </h3><span class="lp">{% show_latest_posts %}</span>
+    <h3>Latest Posts: </h3> {% show_latest_posts %}
     <h3>Most Commented Posts: </h3>
     {% get_most_commented_posts as most_commented_posts %}
     <ul>
         {% for post in most_commented_posts %}
-        <div class="anclr"><li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li></div>
+        <li><a href="{{post.get_absolute_url}}" class="red" >{{post.title}}</a></li>
         {% endfor %}
     </ul>
+    <hr>
+    <p>“True friendship comes when the silence between two people is comfortable.”</p>
+    <p>“A friend is someone who understands your past, believes in your future, and accepts you just the way you are.”</p>
+    <p>“The real test of friendship is can you literally do nothing with the other person? Can you enjoy those moments of life that are utterly simple?”</p>
 </div>
 
 </body>

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'taggit',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,8 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
+LOGIN_REDIRECT_URL = "test"
+LOGOUT_REDIRECT_URL = "thanks"
 
 #SMTP MAIL CONFIGURATION
 EMAIL_HOST = 'smtp.gmail.com'
@@ -134,3 +137,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'sndpchary375@gmail.com'
 EMAIL_HOST_PASSWORD = 'python@123'
 EMAIL_USE_TLS = True
+
